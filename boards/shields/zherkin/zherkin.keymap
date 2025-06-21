@@ -8,6 +8,55 @@
 #define LOWER 1
 
 / {
+    behaviors {
+        td_punct: td_punct {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
+            // 1 tap: . (period)
+            // 2 taps: , (comma)
+            // 3 taps: ? (question mark, Shift + /)
+            // 4 taps: ! (exclamation mark, Shift + 1)
+        };
+        td_quote: td_quote {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp SQT>, <&kp DQT>, <&kp COLON>, <&kp SEMI>;
+            // 1 tap: ' (single quote)
+            // 2 taps: " (double quote)
+            // 3 taps: : (colon)
+            // 4 taps: ; (semicolon)
+        };
+        td_slash: td_slash {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
+            // 1 tap: / (slash)
+            // 2 taps: \ (backslash)
+            // 3 taps: | (pipe, Shift + \)
+            // 4 taps: ~ (tilde, Shift + grave)
+        };
+        combos {
+            combo_space_np {
+                timeout-ms = <30>;
+                key-positions = <25 9>; // N + P
+                bindings = <&kp SPACE>;
+            };
+            combo_space_nm {
+                timeout-ms = <30>;
+                key-positions = <25 26>; // N + M
+                bindings = <&kp SPACE>;
+            };
+            combo_space_bn {
+                timeout-ms = <30>;
+                key-positions = <24 25>; // B + N
+                bindings = <&kp SPACE>;
+            };
+            combo_space_vb {
+                timeout-ms = <30>;
+                key-positions = <23 24>; // V + B
+                bindings = <&kp SPACE>;
+            };
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -19,9 +68,9 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&kp Q      &kp W  &kp E  &kp R  &kp T  &kp Y      &kp U  &kp I  &kp O  &kp P
-&kp A      &kp S  &kp D  &kp F  &kp G  &kp H      &kp J  &kp K  &kp L  &kp ESC
-&kp LSHFT  &kp Z  &kp C  &kp V  &tog 1  &kp SPACE  &kp B  &kp N  &kp M  &kp RET
+&mt LSHIFT Q	&mt LSHIFT W	&mt LSHIFT E	&mt LSHIFT R	&mt LSHIFT T	&mt LSHIFT Y	&mt LSHIFT U	&mt LSHIFT I	&mt LSHIFT O	&mt LSHIFT P
+&mt LSHIFT A	&mt LSHIFT S	&mt LSHIFT D	&mt LSHIFT F	&mt LSHIFT G	&mt LSHIFT H	&mt LSHIFT J	&mt LSHIFT K	&mt LSHIFT L	&kp BSPC 
+&mt LSHIFT Z	&mt LSHIFT X	&mt LSHIFT C	&mt LSHIFT V	&mt LSHIFT B	&mt LSHIFT N	&mt LSHIFT M	&mo LAYER1	&td_quote	&td_punct
             >;
         };
 
@@ -33,9 +82,9 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp NUMBER_0  &kp KP_MULTIPLY  &kp Y  &kp U  &kp I  &kp O  &kp P
-&kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS      &kp KP_DIVIDE    &kp H  &kp J  &kp K  &kp L  &kp ESC
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp RET          &to 0  &kp B  &kp N  &kp M  &kp RET
+&mt LSHIFT N1	&mt LSHIFT N2	&mt LSHIFT N3	&mt LSHIFT N4	&mt LSHIFT N5		&mt LSHIFT N6		&mt LSHIFT N7	&mt LSHIFT N8	&mt LSHIFT N9	&mt LSHIFT N0
+&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&td_slash	&mt LSHIFT MINUS	&kp LEFT		&kp DOWN	&kp UP		&kp RIGHT	&kp ENTER 
+&kp LG(Z)	&kp LS(LG(Z))	&kp LG(C)	&kp LG(V)	&mt LSHIFT EQUAL	&mt LSHIFT LBKT		&mt LSHIFT RBKT	&none		&kp ESC		&kp TAB
             >;
         };
 
