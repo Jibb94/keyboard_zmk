@@ -68,7 +68,7 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&mt LSHIFT Q	&mt LSHIFT W	&mt LSHIFT E	&mt LSHIFT R	&mt LSHIFT T	&mt LSHIFT Y	&mt LSHIFT U	&mt LSHIFT I	&mt LSHIFT O	&mt LSHIFT P
+&mt LSHIFT W	&mt LSHIFT Q	&mt LSHIFT E	&mt LSHIFT R	&mt LSHIFT T	&mt LSHIFT Y	&mt LSHIFT U	&mt LSHIFT I	&mt LSHIFT O	&mt LSHIFT P
 &mt LSHIFT A	&mt LSHIFT S	&mt LSHIFT D	&mt LSHIFT F	&mt LSHIFT G	&mt LSHIFT H	&mt LSHIFT J	&mt LSHIFT K	&mt LSHIFT L	&kp BSPC 
 &mt LSHIFT Z	&mt LSHIFT X	&mt LSHIFT C	&mt LSHIFT V	&mt LSHIFT B	&mt LSHIFT N	&mt LSHIFT M	&mo LAYER1	&td_quote	&td_punct
             >;
