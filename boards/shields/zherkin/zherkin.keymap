@@ -83,16 +83,8 @@
 
             bindings = <
 &mt LSHIFT N1	&mt LSHIFT N2	&mt LSHIFT N3	&mt LSHIFT N4	&mt LSHIFT N5		&mt LSHIFT N6		&mt LSHIFT N7	&mt LSHIFT N8	&mt LSHIFT N9	&mt LSHIFT N0
-&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&td_slash	&mt LSHIFT MINUS	&kp LEFT		&kp DOWN	&kp UP		&kp RIGHT	&kp ENTER 
-&kp LG(Z)	&kp LS(LG(Z))	&kp LG(C)	&kp LG(V)	&mt LSHIFT EQUAL	&mt LSHIFT LBKT		&mt LSHIFT RBKT	&none		&kp ESC		&kp TAB
-            >;
-        };
-
-        layer_2 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&td_slash	    &mt LSHIFT MINUS	&kp LEFT		    &kp DOWN	    &kp UP		    &kp RIGHT	    &kp ENTER 
+&kp LG(Z)	    &kp LS(LG(Z))	&kp LG(C)	    &kp LG(V)	    &mt LSHIFT EQUAL	&mt LSHIFT LBKT		&mt LSHIFT RBKT	&none		    &kp ESC		    &kp TAB
             >;
         };
     };
