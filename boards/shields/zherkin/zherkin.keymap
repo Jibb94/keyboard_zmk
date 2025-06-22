@@ -11,6 +11,8 @@
     behaviors {
         td_punct: td_punct {
             compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
             // 1 tap: . (period)
             // 2 taps: , (comma)
@@ -19,6 +21,8 @@
         };
         td_quote: td_quote {
             compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp SQT>, <&kp DQT>, <&kp COLON>, <&kp SEMI>;
             // 1 tap: ' (single quote)
             // 2 taps: " (double quote)
@@ -27,6 +31,8 @@
         };
         td_slash: td_slash {
             compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
             // 1 tap: / (slash)
             // 2 taps: \ (backslash)
@@ -34,7 +40,7 @@
             // 4 taps: ~ (tilde, Shift + grave)
         };
     };
-    
+
     keymap {
         compatible = "zmk,keymap";
 
