@@ -11,6 +11,33 @@
     keymap {
         compatible = "zmk,keymap";
 
+        behaviors {
+            td_punct: td_punct {
+                compatible = "zmk,behavior-tap-dance";
+                bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
+                // 1 tap: . (period)
+                // 2 taps: , (comma)
+                // 3 taps: ? (question mark, Shift + /)
+                // 4 taps: ! (exclamation mark, Shift + 1)
+            };
+            td_quote: td_quote {
+                compatible = "zmk,behavior-tap-dance";
+                bindings = <&kp SQT>, <&kp DQT>, <&kp COLON>, <&kp SEMI>;
+                // 1 tap: ' (single quote)
+                // 2 taps: " (double quote)
+                // 3 taps: : (colon)
+                // 4 taps: ; (semicolon)
+            };
+            td_slash: td_slash {
+                compatible = "zmk,behavior-tap-dance";
+                bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
+                // 1 tap: / (slash)
+                // 2 taps: \ (backslash)
+                // 3 taps: | (pipe, Shift + \)
+                // 4 taps: ~ (tilde, Shift + grave)
+            };
+        };
+
         default_layer {
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
             // |   ESC   |    Q    |    W    |    E    |    R    |    T    |                                          |    Y    |    U    |    I    |    O    |    P    |    \    |
@@ -21,14 +48,14 @@
             bindings = <
 &mt LSHIFT Q	&mt LSHIFT W	&mt LSHIFT E	&mt LSHIFT R	&mt LSHIFT T	&mt LSHIFT Y	&mt LSHIFT U	&mt LSHIFT I	&mt LSHIFT O	&mt LSHIFT P
 &mt LSHIFT A	&mt LSHIFT S	&mt LSHIFT D	&mt LSHIFT F	&mt LSHIFT G	&mt LSHIFT H	&mt LSHIFT J	&mt LSHIFT K	&mt LSHIFT L	&kp BSPC 
-&mt LSHIFT Z	&mt LSHIFT X	&mt LSHIFT C	&mt LSHIFT V	&mt LSHIFT B	&mt LSHIFT N	&mt LSHIFT M	&mo LOWER	    &none	        &none
+&mt LSHIFT Z	&mt LSHIFT X	&mt LSHIFT C	&mt LSHIFT V	&mt LSHIFT B	&mt LSHIFT N	&mt LSHIFT M	&mo LOWER	    &td_quote	    &td_punct
             >;
         };
 
         lower_layer {
             bindings = <
 &mt LSHIFT N1	&mt LSHIFT N2	&mt LSHIFT N3	&mt LSHIFT N4	&mt LSHIFT N5		&mt LSHIFT N6		&mt LSHIFT N7	&mt LSHIFT N8	&mt LSHIFT N9	&mt LSHIFT N0
-&none	        &none	        &none	        &none	    &mt LSHIFT MINUS	&kp LEFT		    &kp DOWN	    &kp UP		    &kp RIGHT	    &kp ENTER 
+&none	        &none	        &none	        &td_slash	    &mt LSHIFT MINUS	&kp LEFT		    &kp DOWN	    &kp UP		    &kp RIGHT	    &kp ENTER 
 &kp LG(Z)	    &kp LS(LG(Z))	&kp LG(C)	    &kp LG(V)	    &mt LSHIFT EQUAL	&mt LSHIFT LBKT		&mt LSHIFT RBKT	&none		    &kp ESC		    &kp TAB
             >;
         };
