@@ -8,35 +8,36 @@
 #define LOWER 1
 
 / {
+    behaviors {
+        td_punct: td_punct {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
+            // 1 tap: . (period)
+            // 2 taps: , (comma)
+            // 3 taps: ? (question mark, Shift + /)
+            // 4 taps: ! (exclamation mark, Shift + 1)
+        };
+        td_quote: td_quote {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp SQT>, <&kp DQT>, <&kp COLON>, <&kp SEMI>;
+            // 1 tap: ' (single quote)
+            // 2 taps: " (double quote)
+            // 3 taps: : (colon)
+            // 4 taps: ; (semicolon)
+        };
+        td_slash: td_slash {
+            compatible = "zmk,behavior-tap-dance";
+            bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
+            // 1 tap: / (slash)
+            // 2 taps: \ (backslash)
+            // 3 taps: | (pipe, Shift + \)
+            // 4 taps: ~ (tilde, Shift + grave)
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
         
-        behaviors {
-            td_punct: td_punct {
-                compatible = "zmk,behavior-tap-dance";
-                bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
-                // 1 tap: . (period)
-                // 2 taps: , (comma)
-                // 3 taps: ? (question mark, Shift + /)
-                // 4 taps: ! (exclamation mark, Shift + 1)
-            };
-            td_quote: td_quote {
-                compatible = "zmk,behavior-tap-dance";
-                bindings = <&kp SQT>, <&kp DQT>, <&kp COLON>, <&kp SEMI>;
-                // 1 tap: ' (single quote)
-                // 2 taps: " (double quote)
-                // 3 taps: : (colon)
-                // 4 taps: ; (semicolon)
-            };
-            td_slash: td_slash {
-                compatible = "zmk,behavior-tap-dance";
-                bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
-                // 1 tap: / (slash)
-                // 2 taps: \ (backslash)
-                // 3 taps: | (pipe, Shift + \)
-                // 4 taps: ~ (tilde, Shift + grave)
-            };
-        };
 
         default_layer {
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
