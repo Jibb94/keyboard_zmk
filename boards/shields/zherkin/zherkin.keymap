@@ -7,13 +7,18 @@
 #define DEFAULT 0
 #define LOWER 1
 
+#define QUESTION_MARK LS(SLASH)
+#define EXCLAMATION_MARK LS(N1)
+#define PIPE LS(BSLH)
+#define TILDE LS(GRAVE)
+
 / {
     behaviors {
         td_punct: td_punct {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp COMMA>, <&kp LS(KP SLASH)>, <&kp LS(KP 1)>;
+            bindings = <&kp DOT>, <&kp COMMA>, <&kp QUESTION_MARK>, <&kp EXCLAMATION_MARK>;
             // 1 tap: . (period)
             // 2 taps: , (comma)
             // 3 taps: ? (question mark, Shift + /)
@@ -33,7 +38,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SLASH>, <&kp BSLH>, <&kp LS(BSLH)>, <&kp LS(GRAVE)>;
+            bindings = <&kp SLASH>, <&kp BSLH>, <&kp PIPE>, <&kp TILDE>;
             // 1 tap: / (slash)
             // 2 taps: \ (backslash)
             // 3 taps: | (pipe, Shift + \)
