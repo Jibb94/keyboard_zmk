@@ -44,6 +44,37 @@
             // 3 taps: | (pipe, Shift + \)
             // 4 taps: ~ (tilde, Shift + grave)
         };
+        
+        combos {
+            compatible = "zmk,combos";
+
+            combo_shift {
+                timeout-ms = <30>;
+                key-positions = <19 29>;
+                bindings = <&kp LSHIFT>;
+            };
+
+            combo_space_np {
+                timeout-ms = <30>;
+                key-positions = <25 9>;
+                bindings = <&kp SPACE>;
+            };
+            combo_space_nm {
+                timeout-ms = <30>;
+                key-positions = <25 26>;
+                bindings = <&kp SPACE>;
+            };
+            combo_space_bn {
+                timeout-ms = <30>;
+                key-positions = <24 25>;
+                bindings = <&kp SPACE>;
+            };
+            combo_space_vb {
+                timeout-ms = <30>;
+                key-positions = <23 24>;
+                bindings = <&kp SPACE>;
+            };
+        };
     };
 
     keymap {
